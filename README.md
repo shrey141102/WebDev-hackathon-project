@@ -1,3 +1,1 @@
-# Client For UNI-Verse
-Made by a trio
-
+#Project for Hackathon
