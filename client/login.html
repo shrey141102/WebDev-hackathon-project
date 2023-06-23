@@ -38,15 +38,15 @@
         <div class = "faculty">
             <h1>Faculty</h1>
             <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
-            <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
             <lord-icon
             src="https://cdn.lordicon.com/imamsnbq.json"
             trigger="hover"
             colors="primary:#3e5c0a,secondary:#000000"
-                style="width:250px;height:250px">
-            </lord-icon>          
-            <lord-icon  
-            onclick="sv('facultyl','flex');sv('select','none')"
+            style="width:250px;height:250px">
+        </lord-icon>          
+        <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+        <lord-icon  
+            onclick="sv('facultyoption','flex');sv('select','none')"
             src="https://cdn.lordicon.com/xqgancly.json"
             trigger="hover"
             colors="primary:#1b1091,secondary:#629110"
@@ -66,7 +66,7 @@
             style="width:250px;height:250px">
         </lord-icon>            
         <lord-icon
-        onclick="sv('wardenl','flex');sv('select','none')"
+        onclick="sv('wardenoption','flex');sv('select','none')"
         src="https://cdn.lordicon.com/xqgancly.json"
         trigger="hover"
         colors="primary:#1b1091,secondary:#e83a30"
@@ -78,7 +78,7 @@
     </div>
     <div class = "option" id = "option">
         <div class = "studentoption" id = "studentoption">
-            <h1 class = "sl">Student Login</h1>
+            <h1 class = "sl">Student</h1>
             <br>
             <div class = "in" id = "in">
                 <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
@@ -97,12 +97,66 @@
                 colors="primary:#000000,secondary:#1b1091"
                 style="width:150px;height:150px">
             </lord-icon>
+            <div class = "reg"> 
+                <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+                <br>
+                <h3>Login</h3>
+            </div>
         </div>
-        <div class = "reg">
-            <h3>Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+        </div>
+        <div class = "facultyoption" id = "facultyoption">
+            <h1 class = "sl">Faculty</h1>
             <br>
-            <h3>Login</h3>
+            <div class = "in" id = "in">
+                <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                <lord-icon
+                    onclick="sv('facultyr','flex');sv('option','none')"
+                    src="https://cdn.lordicon.com/wloilxuq.json"
+                    trigger="hover"
+                    colors="primary:#104891,secondary:#f4c89c"
+                    style="width:150px;height:150px">
+                </lord-icon>
+                <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                <lord-icon
+                    onclick="sv('facultyl','flex');sv('option','none')"
+                    src="https://cdn.lordicon.com/rqqkvjqf.json"
+                    trigger="hover"
+                    colors="primary:#000000,secondary:#1b1091"
+                    style="width:150px;height:150px">
+                </lord-icon>
+                <div class = "reg"> 
+                    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+                    <br>
+                    <h3>Login</h3>
+                </div>
+            </div>
         </div>
+        <div class = "wardenoption" id = "wardenoption">
+            <h1 class = "sl">Warden</h1>
+            <br>
+            <div class = "in" id = "in">
+                <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                <lord-icon
+                    onclick="sv('wardenr','flex');sv('option','none')"
+                    src="https://cdn.lordicon.com/wloilxuq.json"
+                    trigger="hover"
+                    colors="primary:#104891,secondary:#f4c89c"
+                    style="width:150px;height:150px">
+                </lord-icon>
+                <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                <lord-icon
+                    onclick="sv('wardenl','flex');sv('option','none')"
+                    src="https://cdn.lordicon.com/rqqkvjqf.json"
+                    trigger="hover"
+                    colors="primary:#000000,secondary:#1b1091"
+                    style="width:150px;height:150px">
+                </lord-icon>
+                <div class = "reg"> 
+                    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+                    <br>
+                    <h3>Login</h3>
+                </div>
+            </div>
         </div>
     </div>
     <div class = "logins" id = "logins">
@@ -134,10 +188,9 @@
             <input type ="button" value="Submit" onclick="sv('wardenl','none')">
         </div>
     </div>
-    <canvas class="background"></canvas>
     <div class = "regs" id="regs">
         <div class = "studentr" id = "studentr">
-            <h1 class = "s">Student Login</h1>
+            <h1 class = "s">Student Register</h1>
             <form class = "regdata" id = "regdata">
                 <input type = "text" placeholder = "Name">
                 <br>
@@ -154,6 +207,37 @@
             </form>
             <br>
             <input type="button" value = "Submit" onclick = "sv('studentr','none')">
+        </div>
+        <div class = "facultyr" id = "facultyr">
+            <h1 class = "s">Faculty Register</h1>
+            <br>
+            <form class = "regdata" id = "regdata">
+                <input type = "text" placeholder = "Name">
+                <br>
+                <input type = "text" placeholder = "Emp ID">
+                <br>
+                <input type = "password" placeholder = "Pass Word">
+                <br>
+                <label for = "hod">Are you a HOD?</label>
+                <input type = "radio" id = "hod" placeholder = "Are you a HOD?">
+                <br>
+            </form>
+            <br>
+            <input type="button" value = "Submit" onclick = "sv('facultyr','none')">
+        </div>
+        <div class = "wardenr" id = "wardenr">
+            <h1 class = "s">Warden Register</h1>
+            <br>
+            <form class = "regdata" id = "regdata">
+                <input type = "text" placeholder = "Name">
+                <br>
+                <input type = "text" placeholder = "Hostel Block">
+                <br>
+                <input type = "password" placeholder = "Pass Word">
+                <br>
+            </form>
+            <br>
+            <input type="button" value = "Submit" onclick = "sv('wardenr','none')">
         </div>
     </div>
     <script src = "loginjs.js"></script>
