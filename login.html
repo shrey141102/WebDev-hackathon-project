@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive&display=swap" rel="stylesheet">
+    <link rel="icon" href="./Images/Favion.png" type="image/icon type">
+    <link rel = "stylesheet" href = "logincss.css">
+</head>
+<body>
+    <div class = "title">
+        <img src = "./Images/Logo.jpg" width="500rem">
+    </div>
+    <div class = "select" id = "select">
+        <div class = "student">
+            <h1 class = "stu">Student</h1>
+            <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+            <lord-icon
+                src="https://cdn.lordicon.com/dxjqoygy.json"
+                trigger="morph"
+                colors="primary:#30c9e8,secondary:#3080e8"
+                state="morph-group"
+                style="width:250px;height:250px">
+            </lord-icon>            
+            <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+            <lord-icon
+                onclick="sv('studentoption','flex');sv('select','none')"
+                src="https://cdn.lordicon.com/xqgancly.json"
+                trigger="hover"
+                colors="primary:#1b1091,secondary:#30c9e8"
+                stroke="65"
+                style="width:150px;height:150px">
+            </lord-icon>
+        </div>
+        <div class = "faculty">
+            <h1>Faculty</h1>
+            <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+            <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+            <lord-icon
+            src="https://cdn.lordicon.com/imamsnbq.json"
+            trigger="hover"
+            colors="primary:#3e5c0a,secondary:#000000"
+                style="width:250px;height:250px">
+            </lord-icon>          
+            <lord-icon  
+            onclick="sv('facultyl','flex');sv('select','none')"
+            src="https://cdn.lordicon.com/xqgancly.json"
+            trigger="hover"
+            colors="primary:#1b1091,secondary:#629110"
+            stroke="65"
+            style="width:150px;height:150px">               
+        </lord-icon>
+        </div>
+        <div class = "warden">
+        <h1>Warden</h1>
+        <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+            <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+            <lord-icon
+            src="https://cdn.lordicon.com/eszyyflr.json"
+            trigger="hover"
+            colors="primary:#e83a30,secondary:#000000"
+            state="hover-wave"
+            style="width:250px;height:250px">
+        </lord-icon>            
+        <lord-icon
+        onclick="sv('wardenl','flex');sv('select','none')"
+        src="https://cdn.lordicon.com/xqgancly.json"
+        trigger="hover"
+        colors="primary:#1b1091,secondary:#e83a30"
+        stroke="65"
+        style="width:150px;height:150px">
+
+        </lord-icon>
+        </div>
+    </div>
+    <div class = "option" id = "option">
+        <div class = "studentoption" id = "studentoption">
+            <h1 class = "sl">Student Login</h1>
+            <br>
+            <div class = "in" id = "in">
+                <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                <lord-icon
+                    src="https://cdn.lordicon.com/wloilxuq.json"
+                    trigger="hover"
+                    colors="primary:#104891,secondary:#f4c89c"
+                    style="width:150px;height:150px">
+                </lord-icon>
+                <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                <lord-icon
+                    src="https://cdn.lordicon.com/rqqkvjqf.json"
+                    trigger="hover"
+                    colors="primary:#000000,secondary:#1b1091"
+                    style="width:150px;height:150px">
+                </lord-icon>
+            </div>
+
+        </div>
+    </div>
+    <div class = "logins" id = "logins">
+        <div class = "studentl" id = "studentl">
+            <h1 class = "s">Student Login</h1>
+            <br>
+            <input type = "text" placeholder = "User Name">
+            <br>
+            <input type = "password" placeholder="Pass Word">
+            <br>
+            <input type ="button" value="Submit" onclick="sv('studentl','none')">
+        </div>
+        <div class = "facultyl" id = "facultyl">
+            <h1 class = "s">Faculty Login</h1>
+            <br>
+            <input type = "text" placeholder = "User Name">
+            <br>
+            <input type = "password" placeholder="Pass Word">
+            <br>
+            <input type ="button" value="Submit" onclick="sv('facultyl','none')">
+        </div>
+        <div class = "wardenl" id="wardenl">
+            <h1 class = "s">Warden Login</h1>
+            <br>
+            <input type = "text" placeholder = "User Name">
+            <br>
+            <input type = "password" placeholder="Pass Word">
+            <br>
+            <input type ="button" value="Submit" onclick="sv('wardenl','none')">
+        </div>
+    </div>
+    <script src = "loginjs.js"></script>
+</body>
+</html>

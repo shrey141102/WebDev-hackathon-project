@@ -1,0 +1,135 @@
+html{
+    scroll-behavior: smooth;
+}
+*{
+    font-family: 'Cutive', serif;
+    padding: 0;
+    margin: 0;
+}
+body{
+    /* background-image: linear-gradient(to right, rgba(156, 208, 248, 0), rgb(119, 191, 254)); */
+    /* height: 100%;
+    width: 100%; */
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgb(7, 3, 86) 0%, rgb(128, 178, 228) 35%, rgba(226, 194, 129, 1) 100%, rgba(255, 104, 0, 1) 100%);
+    overflow-x: hidden;
+}
+.title{
+    width: 100%;
+    height:9rem;
+    background-color: rgba(40,74,111,255);
+    color: whitesmoke;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.name{
+    text-align: center;
+}
+.select{
+    position: relative;
+    top:10rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-items: center;
+    cursor: pointer;
+}
+.stu{
+    font-size: xx-large;
+    font-weight:bolder;
+    position: relative; 
+}
+.logins{
+    position: relative;
+    top:10rem;
+    left:31rem;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-items: center;
+}
+.student{
+    width: 25rem;
+    height: 15rem;
+    background-color: rgb(243, 251, 248);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+}
+.faculty{
+    width: 25rem;
+    height: 15rem;
+    background-color: rgb(243, 251, 248);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+}
+.warden{
+    width: 25rem;
+    height: 15rem;
+    background-color: rgb(243, 251, 248);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+}
+.studentl{
+    width: 25rem;
+    height: 15rem;
+    background-color: rgb(243, 251, 248);
+    border-radius: 10px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+}
+.facultyl{
+    width: 25rem;
+    height: 15rem;
+    background-color: rgb(243, 251, 248);
+    border-radius: 10px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+}
+.wardenl{
+    width: 25rem;
+    height: 15rem;
+    background-color: rgb(243, 251, 248);
+    border-radius: 10px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+}
+.studentoption{
+    width: 25rem;
+    height: 15rem;
+    background-color: rgb(243, 251, 248);
+    border-radius: 10px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+}
