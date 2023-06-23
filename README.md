@@ -64,3 +64,9 @@
 - [@shrey141102](https://www.github.com/shrey141102)
 - [@aryanksanghvi](https://www.github.com/aryanksanghvi)
 - [@Ayush971](https://www.github.com/Ayush971)
+
+## Acknowledgements
+
+ - [Free icons - lordicon](https://lordicon.com/icons/system/outline?group=free)
+ - [Background - particles.js](https://marcbruederlin.github.io/particles.js/)
+- [Logo, icons- logoai](https://marcbruederlin.github.io/particles.js/) 
