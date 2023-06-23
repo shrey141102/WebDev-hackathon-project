@@ -15,7 +15,7 @@
     <div class="student-details">
         <div class="name">
             <p class="Full-name">
-                Faculty teacher <sub class="reg-no">(EmpID)</sub>
+                Rajesh Kumar <sub class="reg-no">(52500)</sub>
             </p>
             <p class="student">&ltFaculty&gt</p>
         </div>
@@ -34,32 +34,44 @@
                 </lord-icon></a>
         </div>
     </div>
-    <div class="functions">
+    <div class="functions" id = "functions">
         <div class="upper-functions">
-            <div class="see">
-                <p>See courses and students</p>
+            <div class="see" id = "see">
+                <h1>Courses & Students</h1>
                 <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
                 <lord-icon
                         src="https://cdn.lordicon.com/qhgmphtg.json"
                         trigger="hover"
                         colors="primary:#104891,secondary:#f4c89c"
-                        style="width: 10rem; height: 10rem; padding: 2rem 3.5rem 1rem 3.5rem;">
-                    </lord-icon></a>
+                        style="width: 10rem; height: 10rem; ">
+                    </lord-icon>
             </div>
-            <div class="events">
-                <p>Events proposals</p>
+            <div class="events" id = "events">
+                <h1>Events proposals</h1>
                 <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
                 <lord-icon
+                        onclick="sv('functions', 'none');sv('eve','flex')"
                         src="https://cdn.lordicon.com/wxnxiano.json"
                         trigger="morph"
                         colors="primary:#3080e8,secondary:#f4c89c"
                         state="morph"
-                        style="width: 10rem; height: 10rem; padding: 2rem 3.5rem 1rem 3.5rem;">
-                    </lord-icon></a>
+                        style="width: 10rem; height: 10rem;">
+                    </lord-icon>
             </div>
         </div>
-        <
     </div>
+    <div class = "eve" id = "eve">
+        <h2>WebVerse</h2>
+        <h2>House Of Developers</h2>
+        <h2>Nexperience</h2>
+        <br>
+        <input type = "text" placeholder="Choose which to approve">
+        <br>
+        <input type = "button" value = "Ok" onclick="sv('eve','none');sv('functions', 'inline')">
+    </div>
+    <canvas class = "background"></canvas>
+    <script src = "loginjs.js"></script>
+    <script src="./particles.js"></script>
 </body>
 
 </html>
