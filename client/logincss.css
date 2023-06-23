@@ -7,10 +7,6 @@ html{
     margin: 0;
 }
 body{
-    /* background-image: linear-gradient(to right, rgba(156, 208, 248, 0), rgb(119, 191, 254)); */
-    /* height: 100%;
-    width: 100%; */
-    /*background: rgba(40, 74, 111, 255); */
     background: linear-gradient(90deg, rgb(37, 150, 190) 0%, rgb(128, 178, 228) 35%, rgba(226, 194, 129, 1) 100%, rgba(255, 104, 0, 1) 100%); 
     overflow-x: hidden;
     overflow-y: hidden; 
@@ -180,7 +176,6 @@ body{
     position: relative;
     top:10rem;
     left:31rem;
-    /* display: none; */
     flex-direction: row;
     justify-content: space-around;
     justify-items: center;

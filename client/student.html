@@ -22,7 +22,7 @@
         <div class="details">
             <ul class="list-details">
                 <li class="item">Block : C</li>
-                <li class="item">Room no. : 1417</li>
+                <li class="item">Room no : 1417</li>
                 <li class="item">Mess Type : Special</li>
             </ul>
         </div>
@@ -34,60 +34,147 @@
                 </lord-icon></a>
         </div>
     </div>
-    <div class="functions">
+    <div class="functions" id = "functions">
         <div class="upper-functions">
             <div class="leave-request">
-                <p>Leave Request</p>
+                <h1>Leave Request</h1>
                 <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
-                <a href=""><lord-icon src="https://cdn.lordicon.com/nocovwne.json" trigger="hover"
+                <lord-icon 
+                onclick="sv('functions', 'none');sv('lr','flex')"
+                src="https://cdn.lordicon.com/nocovwne.json" trigger="hover"
                         colors="primary:#104891,secondary:#f4c89c"
-                        style="width: 10rem; height: 10rem; padding: 2rem 3.5rem 1rem 3.5rem;">
-                    </lord-icon></a>
+                        style="width: 10rem; height: 10rem;">
+                    </lord-icon>
             </div>
             <div class="room-details">
-                <p>Complaint</p>
+                <h1>Complaint</h1>
                 <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
-                <a href=""><lord-icon src="https://cdn.lordicon.com/nocovwne.json" trigger="hover"
+                <lord-icon 
+                onclick="sv('functions', 'none');sv('cm','flex')"
+                src="https://cdn.lordicon.com/nocovwne.json" trigger="hover"
                         colors="primary:#104891,secondary:#f4c89c"
-                        style="width: 10rem; height: 10rem; padding: 2rem 3.5rem 1rem 3.5rem;">
-                    </lord-icon></a>
+                        style="width: 10rem; height: 10rem;">
+                    </lord-icon>
             </div>
             <div class="complaint">
-                <p>Room Details</p>
+                <br>
+                <h1>Room Details</h1>
                 <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
-                <a href="">
-                    <lord-icon src="https://cdn.lordicon.com/tyounuzx.json" trigger="hover"
-                        colors="primary:#121331,secondary:#66d7ee" style="width: 20rem; height: 20rem; padding: 0 1rem">
-                    </lord-icon></a>
+                    <lord-icon 
+                        onclick="sv('functions', 'none');sv('rd','flex')"
+                        src="https://cdn.lordicon.com/tyounuzx.json" trigger="hover"
+                        colors="primary:#121331,secondary:#66d7ee" 
+                        style="width: 20rem; height: 20rem;">
+                    </lord-icon>
             </div>
         </div>
         <div class="bottom-functions">
             <div class="mess-change">
-                <p>Mess Change</p>
+                <h1>Mess Change</h1>
                 <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
-                <a href="">
-                    <lord-icon src="https://cdn.lordicon.com/nocovwne.json" trigger="hover"
+                    <lord-icon 
+                    onclick="sv('functions', 'none');sv('mc','flex')"
+                    src="https://cdn.lordicon.com/nocovwne.json" trigger="hover"
                         colors="primary:#104891,secondary:#f4c89c"
-                        style="width: 10rem; height: 10rem; padding: 2rem 3.5rem 1rem 3.5rem;">
-                    </lord-icon></a>
+                        style="width: 10rem; height: 10rem;">
+                    </lord-icon>
             </div>
             <div class="reg-course">
-                <p>Register Course</p>
+                <h1>Register Course</h1>
                 <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
-                <a href=""><lord-icon src="https://cdn.lordicon.com/nocovwne.json" trigger="hover"
+                <lord-icon 
+                onclick="sv('functions', 'none');sv('rc','flex')"
+                src="https://cdn.lordicon.com/nocovwne.json" trigger="hover"
                         colors="primary:#104891,secondary:#f4c89c"
-                        style="width: 10rem; height: 10rem; padding: 2rem 3.5rem 1rem 3.5rem;">
-                    </lord-icon></a>
+                        style="width: 10rem; height: 10rem;">
+                    </lord-icon>
             </div>
             <div class="view-events">
-                <p>View Events</p>
+                <br>
+                <h1>View Events</h1>
                 <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
-                <a href=""><lord-icon src="https://cdn.lordicon.com/tyounuzx.json" trigger="hover"
-                        colors="primary:#121331,secondary:#66d7ee" style="width: 20rem; height: 20rem; padding: 0 1rem">
-                    </lord-icon></a>
+                <lord-icon 
+                onclick="sv('functions', 'none');sv('ve','flex')"
+                    src="https://cdn.lordicon.com/tyounuzx.json" trigger="hover"
+                        colors="primary:#121331,secondary:#66d7ee" 
+                        style="width: 20rem; height: 20rem;">
+                    </lord-icon>
             </div>
         </div>
     </div>
+    <div class = "rd" id = "rd">
+        <h2>Block : C</h2>
+        <h2>Room no : 1417</h2>
+        <h2>Mess Type : Special</h2>
+        <br>
+        <input type = "button" value = "Ok" onclick="sv('rd','none');sv('functions', 'inline')">
+    </div>
+    <div class = "ve" id = "ve">
+        <h2>WebVerse</h2>
+        <h2>House Of Developers</h2>
+        <h2>Nexperience</h2>
+        <br>
+        <input type = "button" value = "Ok" onclick="sv('ve','none');sv('functions', 'inline')">
+    </div>
+    <div class = "lr" id = "lr">
+        <form class = "regdata" id = "regdata">
+            <input type = "date" placeholder = "Date">
+            <br>
+            <input type = "text" placeholder = "Type">
+            <br>
+            <input type = "time" placeholder = "Time">
+            <br>
+            <input type = "text" placeholder = "Duration">
+            <br>
+        </form>
+        <br>
+        <input type="button" value = "Submit" onclick = "sv('lr','none');sv('functions', 'inline')">
+    </div>
+    <div class = "cm" id = "cm">
+        <form class = "regdata" id = "regdata">
+            <input type = "date" placeholder = "Date">
+            <br>
+            <input type = "text" placeholder = "Type">
+            <br>
+            <input type = "text" placeholder = "Description">
+            <br>
+            <input type = "text" placeholder = "Severity">
+            <br>
+        </form>
+        <br>
+        <input type="button" value = "Submit" onclick = "sv('cm','none');sv('functions', 'inline')">
+    </div>
+    <div class = "mc" id = "mc">
+        <form class = "regdata" id = "regdata">
+            <input type = "text" placeholder = "Message">
+            <br>
+            <input type = "text" placeholder = "Data">
+            <br>
+        </form>
+        <br>
+        <input type="button" value = "Submit" onclick = "sv('mc','none');sv('functions', 'inline')">
+    </div>
+    <div class = "rc" id = "rc">
+        <form class = "regdata" id = "regdata">
+            <input type = "text" placeholder = "ID">
+            <br>
+            <input type = "text" placeholder = "Course Name">
+            <br>
+            <input type = "text" placeholder = "Course Code">
+            <br>
+            <input type = "text" placeholder = "Course Type">
+            <br>
+            <input type = "text" placeholder = "Course Credits">
+            <br>
+            <input type = "text" placeholder = "Course Teacher ID">
+            <br>
+        </form>
+        <br>
+        <input type="button" value = "Submit" onclick = "sv('rc','none');sv('functions', 'inline')">
+    </div>
+    <canvas class = "background"></canvas>
+    <script src = "loginjs.js"></script>
+    <script src="./particles.js"></script>
 </body>
 
 </html>
