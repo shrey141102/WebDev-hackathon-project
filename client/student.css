@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Cutive', serif;
+}
+.student-details{
+    background-color: blanchedalmond;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Full-name{
+    padding: 0 1rem;
+    font-weight: 800;
+    font-size: 2rem;
+}
+.reg-no{
+    font-weight: 600;
+    font-size: 1rem;
+}
+.student{
+    padding: 0 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.list-details{
+    display: flex;
+}
+.item{
+    padding: 0 20px;
+    font-size: 1.5rem;
+}
+
+.upper-functions{
+    padding: 0 0 0 6.5rem;
+    background-color: aquamarine;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.leave-request{
+    background-color: rgb(27, 103, 203);
+    margin: 1rem;
+    display:inline-block;
+    height: 18rem;
+    width: 25rem;
+    box-shadow: 5px 10px 8px #888888;
+}
+
+.complaint{
+    background-color: rgb(27, 103, 203);
+
+    margin: 1rem;
+    display:inline-block;
+    height: 18rem;
+    width: 25rem;
+    box-shadow: 5px 10px 8px #888888;
+
+}
+
+.bottom-functions{
+    padding: 0 0 0 6.5rem;
+    background-color: aquamarine;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.mess-change{
+    background-color: rgb(27, 103, 203);
+    margin: 1rem;
+    display:inline-block;
+    height: 18rem;
+    width: 25rem;
+    box-shadow: 5px 10px 8px #888888;
+
+}
+.room-details{
+    background-color: rgb(27, 103, 203);
+    margin: 1rem;
+    display:inline-block;
+    height: 18rem;
+    width: 25rem;
+    box-shadow: 5px 10px 8px #888888;
+
+}
+.reg-course{
+    background-color: rgb(27, 103, 203);
+
+    margin: 1rem;
+    display:inline-block;
+    height: 18rem;
+    width: 25rem;
+    box-shadow: 5px 10px 8px #888888;
+
+}
+.view-events{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(27, 103, 203);
+    margin: 1rem;
+    display:inline-block;
+    height: 18rem;
+    width: 25rem;
+    box-shadow: 5px 10px 8px #888888;
+
+}
