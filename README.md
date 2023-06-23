@@ -45,6 +45,10 @@
 <img width="1440" alt="Screenshot 2023-06-24 at 1 43 45 AM" src="https://github.com/shrey141102/WebDev-hackathon-project/assets/90243443/a4c97acb-59e8-466b-a239-7a9afdefc3aa">
 
 
+<img width="1440" alt="Screenshot 2023-06-24 at 4 00 45 AM" src="https://github.com/shrey141102/WebDev-hackathon-project/assets/90243443/f91b20da-d07c-486b-8a5d-c6e104a8c040">
+
+<img width="1440" alt="image" src="https://github.com/shrey141102/WebDev-hackathon-project/assets/90243443/7d93d7d2-da71-4163-9523-c27dcfeb8a3b">
+
 
 ## Tech Stack
 
