@@ -8,3 +8,11 @@ function sv(id, vi){
     }
     
 }
+
+window.onload = function() {
+  Particles.init({
+    selector: '.background',
+    connectParticles: true,
+    maxParticles: 180,
+  });
+};
