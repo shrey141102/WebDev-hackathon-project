@@ -1,0 +1,28 @@
+{
+  "name": "webverse",
+  "version": "1.0.0",
+  "description": "Api Server for Android Clubs WebVerse Event",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "postinstall": "prisma generate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^4.15.0",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "prisma": "^4.15.0",
+    "swagger-autogen": "^2.23.2",
+    "swagger-ui-express": "^4.6.3",
+    "zod": "^3.21.4"
+  }
+}

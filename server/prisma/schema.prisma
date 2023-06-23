@@ -1,0 +1,134 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Student {
+  id       Int    @id @default(autoincrement())
+  name     String
+  regNo    String @unique
+  block    String
+  password String
+  roomNo   String
+
+  messType String @default("Veg")
+
+  toBeChangedTo String  @default("")
+  isForChange   Boolean @default(false)
+
+  // leaves applied by student
+  leave     Leave[]
+  complaint Complaint[]
+  course    Course[]
+
+  Room   Room? @relation(fields: [roomId], references: [id])
+  roomId Int?
+}
+
+model Warden {
+  id       Int    @id @default(autoincrement())
+  name     String
+  block    String @unique
+  password String
+
+  // links to leave applied by students of the same block
+  leave     Leave[]
+  complaint Complaint[]
+}
+
+model Leave {
+  id            Int    @id @default(autoincrement())
+  leaveType     String
+  leaveDate     String
+  leaveTime     String
+  LeaveDuration String
+
+  isApproved Boolean @default(false)
+  isRejected Boolean @default(false)
+
+  // links to student who applied for leave
+  Student   Student? @relation(fields: [studentId], references: [id])
+  studentId Int?
+
+  // links to warden of the same block of student
+  Warden   Warden? @relation(fields: [wardenId], references: [id])
+  wardenId Int?
+}
+
+model Complaint {
+  id                   Int    @id @default(autoincrement())
+  complaintType        String
+  complaintDate        String
+  complaintDescription String
+  complaintSeverity    String
+
+  isResolved Boolean @default(false)
+  isRejected Boolean @default(false)
+
+  // links to student who applied for complaint
+  Student   Student? @relation(fields: [studentId], references: [id])
+  studentId Int?
+
+  // links to warden of the same block of student
+  Warden   Warden? @relation(fields: [wardenId], references: [id])
+  wardenId Int?
+}
+
+model Room {
+  id           Int     @id @default(autoincrement())
+  roomNo       String  @unique
+  roomType     String
+  roomCapacity Int
+  block        String
+  isFull       Boolean @default(false)
+
+  students Student[]
+}
+
+model Course {
+  id Int @id @default(autoincrement())
+
+  courseName    String
+  courseCode    String
+  courseType    String
+  courseCredits Int
+
+  Student Student[]
+
+  courseTeacher   Faculty? @relation(fields: [courseTeacherId], references: [id])
+  courseTeacherId Int?
+}
+
+model Faculty {
+  id Int @id @default(autoincrement())
+
+  empId    String  @unique
+  name     String
+  password String
+  isHOD    Boolean @default(false)
+
+  Course Course[]
+}
+
+model Events {
+  id Int @id @default(autoincrement())
+
+  eventName        String
+  eventDescription String
+  eventPoster      String
+  eventDate        String
+  eventTime        String
+  eventVenue       String
+  eventOrganiser   String
+  participantCount Int
+  hostedBy         String
+  isApproved       Boolean @default(false)
+  isRejected       Boolean @default(false)
+}

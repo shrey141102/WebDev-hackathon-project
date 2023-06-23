@@ -1,0 +1,4182 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "REST API",
+    "description": ""
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/docs": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/student/auth/register": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "regNo": {
+                  "example": "any"
+                },
+                "block": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                },
+                "roomNo": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "block": {
+                      "type": "string",
+                      "example": "A"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "John Doe"
+                    },
+                    "regNo": {
+                      "type": "string",
+                      "example": "19BCE0000"
+                    },
+                    "id": {
+                      "type": "number",
+                      "example": 1
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/v1/student/auth/login": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "regNo": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Student successfully logged in.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Logged in successfully"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "John Wick"
+                    },
+                    "regNo": {
+                      "type": "string",
+                      "example": "21BPS1390"
+                    },
+                    "block": {
+                      "type": "string",
+                      "example": "A"
+                    },
+                    "roomNo": {
+                      "type": "string",
+                      "example": "A-102"
+                    },
+                    "messType": {
+                      "type": "string",
+                      "example": "Special"
+                    },
+                    "toBeChangedTo": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "isForChange": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "roomId": {
+                      "type": "number",
+                      "example": 3
+                    }
+                  }
+                },
+                "token": {
+                  "type": "string",
+                  "example": ""
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v1/student/me/": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "John Doe"
+                    },
+                    "email": {
+                      "type": "string",
+                      "example": "john@doe.com"
+                    },
+                    "phone_number": {
+                      "type": "string",
+                      "example": "+639784561234"
+                    },
+                    "block": {
+                      "type": "string",
+                      "example": "A"
+                    },
+                    "regNo": {
+                      "type": "string",
+                      "example": "19BCE0000"
+                    },
+                    "Room": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number",
+                          "example": 1
+                        },
+                        "roomNo": {
+                          "type": "string",
+                          "example": "101"
+                        },
+                        "block": {
+                          "type": "string",
+                          "example": "A"
+                        },
+                        "studentId": {
+                          "type": "number",
+                          "example": 1
+                        }
+                      }
+                    },
+                    "complaint": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number",
+                            "example": 1
+                          },
+                          "complaintType": {
+                            "type": "string",
+                            "example": "Electrical"
+                          },
+                          "complaintDate": {
+                            "type": "string",
+                            "example": "2021-05-05"
+                          },
+                          "complaintDescription": {
+                            "type": "string",
+                            "example": "Lights not working"
+                          },
+                          "complaintSeverity": {
+                            "type": "string",
+                            "example": "High"
+                          },
+                          "isResolved": {
+                            "type": "boolean",
+                            "example": false
+                          },
+                          "studentId": {
+                            "type": "number",
+                            "example": 1
+                          },
+                          "wardenId": {
+                            "type": "number",
+                            "example": 1
+                          }
+                        }
+                      }
+                    },
+                    "leave": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number",
+                            "example": 1
+                          },
+                          "leaveType": {
+                            "type": "string",
+                            "example": "Casual"
+                          },
+                          "leaveDate": {
+                            "type": "string",
+                            "example": "2021-05-05"
+                          },
+                          "leaveTime": {
+                            "type": "string",
+                            "example": "10:00:00"
+                          },
+                          "LeaveDuration": {
+                            "type": "string",
+                            "example": "1"
+                          },
+                          "isApproved": {
+                            "type": "boolean",
+                            "example": false
+                          },
+                          "isRejected": {
+                            "type": "boolean",
+                            "example": false
+                          },
+                          "studentId": {
+                            "type": "number",
+                            "example": 1
+                          },
+                          "wardenId": {
+                            "type": "number",
+                            "example": 1
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/student/me/my-warden": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "John Doe"
+                    },
+                    "block": {
+                      "type": "string",
+                      "example": "A"
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/student/leave/": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "leave": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number",
+                            "example": 1
+                          },
+                          "leaveType": {
+                            "type": "string",
+                            "example": "Casual"
+                          },
+                          "leaveDate": {
+                            "type": "string",
+                            "example": "2021-05-05"
+                          },
+                          "leaveTime": {
+                            "type": "string",
+                            "example": "10:00:00"
+                          },
+                          "LeaveDuration": {
+                            "type": "string",
+                            "example": "1"
+                          },
+                          "isApproved": {
+                            "type": "boolean",
+                            "example": false
+                          },
+                          "isRejected": {
+                            "type": "boolean",
+                            "example": false
+                          },
+                          "studentId": {
+                            "type": "number",
+                            "example": 1
+                          },
+                          "wardenId": {
+                            "type": "number",
+                            "example": 1
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "leaveType": {
+                  "example": "any"
+                },
+                "leaveDate": {
+                  "example": "any"
+                },
+                "leaveTime": {
+                  "example": "any"
+                },
+                "leaveDuration": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "leaveType": {
+                      "type": "string",
+                      "example": "Casual"
+                    },
+                    "leaveDate": {
+                      "type": "string",
+                      "example": "2021-05-05"
+                    },
+                    "leaveTime": {
+                      "type": "string",
+                      "example": "10:00:00"
+                    },
+                    "LeaveDuration": {
+                      "type": "string",
+                      "example": "1"
+                    },
+                    "isApproved": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "isRejected": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "studentId": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "wardenId": {
+                      "type": "number",
+                      "example": 1
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "leaveID": {
+                  "example": "any"
+                },
+                "leaveType": {
+                  "example": "any"
+                },
+                "leaveDate": {
+                  "example": "any"
+                },
+                "leaveTime": {
+                  "example": "any"
+                },
+                "leaveDuration": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "leaveType": {
+                      "type": "string",
+                      "example": "Casual"
+                    },
+                    "leaveDate": {
+                      "type": "string",
+                      "example": "2021-05-05"
+                    },
+                    "leaveTime": {
+                      "type": "string",
+                      "example": "10:00:00"
+                    },
+                    "LeaveDuration": {
+                      "type": "string",
+                      "example": "1"
+                    },
+                    "isApproved": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "isRejected": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "studentId": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "wardenId": {
+                      "type": "number",
+                      "example": 1
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "leaveID": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "leaveType": {
+                      "type": "string",
+                      "example": "Casual"
+                    },
+                    "leaveDate": {
+                      "type": "string",
+                      "example": "2021-05-05"
+                    },
+                    "leaveTime": {
+                      "type": "string",
+                      "example": "10:00:00"
+                    },
+                    "LeaveDuration": {
+                      "type": "string",
+                      "example": "1"
+                    },
+                    "isApproved": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "isRejected": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "studentId": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "wardenId": {
+                      "type": "number",
+                      "example": 1
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/student/complaint/": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "complaint": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number",
+                            "example": 1
+                          },
+                          "complaintType": {
+                            "type": "string",
+                            "example": "Electrical"
+                          },
+                          "complaintDate": {
+                            "type": "string",
+                            "example": "2021-05-05"
+                          },
+                          "complaintDescription": {
+                            "type": "string",
+                            "example": "Lights not working"
+                          },
+                          "complaintSeverity": {
+                            "type": "string",
+                            "example": "High"
+                          },
+                          "isResolved": {
+                            "type": "boolean",
+                            "example": false
+                          },
+                          "studentId": {
+                            "type": "number",
+                            "example": 1
+                          },
+                          "wardenId": {
+                            "type": "number",
+                            "example": 1
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "complaintType": {
+                  "example": "any"
+                },
+                "complaintDate": {
+                  "example": "any"
+                },
+                "complaintDescription": {
+                  "example": "any"
+                },
+                "complaintSeverity": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "complaintType": {
+                      "type": "string",
+                      "example": "Electrical"
+                    },
+                    "complaintDate": {
+                      "type": "string",
+                      "example": "2021-05-05"
+                    },
+                    "complaintDescription": {
+                      "type": "string",
+                      "example": "Lights not working"
+                    },
+                    "complaintSeverity": {
+                      "type": "string",
+                      "example": "High"
+                    },
+                    "isResolved": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "studentId": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "wardenId": {
+                      "type": "number",
+                      "example": 1
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "complaintId": {
+                  "example": "any"
+                },
+                "complaintType": {
+                  "example": "any"
+                },
+                "complaintDate": {
+                  "example": "any"
+                },
+                "complaintDescription": {
+                  "example": "any"
+                },
+                "complaintSeverity": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "complaintType": {
+                      "type": "string",
+                      "example": "Electrical"
+                    },
+                    "complaintDate": {
+                      "type": "string",
+                      "example": "2021-05-05"
+                    },
+                    "complaintDescription": {
+                      "type": "string",
+                      "example": "Lights not working"
+                    },
+                    "complaintSeverity": {
+                      "type": "string",
+                      "example": "High"
+                    },
+                    "isResolved": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "studentId": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "wardenId": {
+                      "type": "number",
+                      "example": 1
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "complaintId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Deleted successfully"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "complaintType": {
+                      "type": "string",
+                      "example": "Electrical"
+                    },
+                    "complaintDate": {
+                      "type": "string",
+                      "example": "2021-05-05"
+                    },
+                    "complaintDescription": {
+                      "type": "string",
+                      "example": "Lights not working"
+                    },
+                    "complaintSeverity": {
+                      "type": "string",
+                      "example": "High"
+                    },
+                    "isResolved": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "studentId": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "wardenId": {
+                      "type": "number",
+                      "example": 1
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/student/room-details/": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 4
+                    },
+                    "roomNo": {
+                      "type": "string",
+                      "example": "A-105"
+                    },
+                    "roomType": {
+                      "type": "string",
+                      "example": "AC"
+                    },
+                    "roomCapacity": {
+                      "type": "number",
+                      "example": 2
+                    },
+                    "block": {
+                      "type": "string",
+                      "example": "A"
+                    },
+                    "isFull": {
+                      "type": "boolean",
+                      "example": false
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/student/mess-details/": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "string",
+                  "example": "Veg"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "messType": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 4
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "John Dow"
+                    },
+                    "regNo": {
+                      "type": "string",
+                      "example": "19BCE1000"
+                    },
+                    "block": {
+                      "type": "string",
+                      "example": "A"
+                    },
+                    "roomNo": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "messType": {
+                      "type": "string",
+                      "example": "Veg"
+                    },
+                    "toBeChangedTo": {
+                      "type": "string",
+                      "example": "Non Veg"
+                    },
+                    "isForChange": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "roomId": {}
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/student/course/get-all-registered": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number",
+                        "example": 2
+                      },
+                      "courseName": {
+                        "type": "string",
+                        "example": "DAA"
+                      },
+                      "courseCode": {
+                        "type": "string",
+                        "example": "BCSE204L"
+                      },
+                      "courseType": {
+                        "type": "string",
+                        "example": "Theory"
+                      },
+                      "courseCredits": {
+                        "type": "number",
+                        "example": 4
+                      },
+                      "courseTeacherId": {
+                        "type": "number",
+                        "example": 4
+                      }
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/student/course/get-all": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number",
+                        "example": 2
+                      },
+                      "courseName": {
+                        "type": "string",
+                        "example": "DAA"
+                      },
+                      "courseCode": {
+                        "type": "string",
+                        "example": "BCSE204L"
+                      },
+                      "courseType": {
+                        "type": "string",
+                        "example": "Theory"
+                      },
+                      "courseCredits": {
+                        "type": "number",
+                        "example": 4
+                      },
+                      "courseTeacherId": {
+                        "type": "number",
+                        "example": 4
+                      }
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/student/course/add-course": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "courseId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 2
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "John Wick"
+                    },
+                    "regNo": {
+                      "type": "string",
+                      "example": "21BPS1388"
+                    },
+                    "block": {
+                      "type": "string",
+                      "example": "A"
+                    },
+                    "roomNo": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "messType": {
+                      "type": "string",
+                      "example": "Veg"
+                    },
+                    "toBeChangedTo": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "isForChange": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "roomId": {},
+                    "course": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number",
+                            "example": 2
+                          },
+                          "courseName": {
+                            "type": "string",
+                            "example": "DAA"
+                          },
+                          "courseCode": {
+                            "type": "string",
+                            "example": "BCSE204L"
+                          },
+                          "courseType": {
+                            "type": "string",
+                            "example": "Theory"
+                          },
+                          "courseCredits": {
+                            "type": "number",
+                            "example": 1
+                          },
+                          "courseTeacherId": {
+                            "type": "number",
+                            "example": 4
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/student/event/": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "eventName": {
+                  "example": "any"
+                },
+                "eventDescription": {
+                  "example": "any"
+                },
+                "eventDate": {
+                  "example": "any"
+                },
+                "eventTime": {
+                  "example": "any"
+                },
+                "eventVenue": {
+                  "example": "any"
+                },
+                "eventOrganiser": {
+                  "example": "any"
+                },
+                "participantCount": {
+                  "example": "any"
+                },
+                "hostedBy": {
+                  "example": "any"
+                },
+                "eventPoster": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 4
+                    },
+                    "eventName": {
+                      "type": "string",
+                      "example": "WebVerse3.0"
+                    },
+                    "eventDescription": {
+                      "type": "string",
+                      "example": "fiuhgudasisnlgfdg"
+                    },
+                    "eventPoster": {
+                      "type": "string",
+                      "example": "url://123/img.jpg"
+                    },
+                    "eventDate": {
+                      "type": "string",
+                      "example": "10/10/2023"
+                    },
+                    "eventTime": {
+                      "type": "string",
+                      "example": "10:00"
+                    },
+                    "eventVenue": {
+                      "type": "string",
+                      "example": "MG Audi"
+                    },
+                    "eventOrganiser": {
+                      "type": "string",
+                      "example": "Android Club"
+                    },
+                    "participantCount": {
+                      "type": "number",
+                      "example": 12
+                    },
+                    "hostedBy": {
+                      "type": "string",
+                      "example": "Android Club"
+                    },
+                    "isApproved": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "isRejected": {
+                      "type": "boolean",
+                      "example": false
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number",
+                        "example": 4
+                      },
+                      "eventName": {
+                        "type": "string",
+                        "example": "WebVerse3.0"
+                      },
+                      "eventDescription": {
+                        "type": "string",
+                        "example": "fiuhgudasisnlgfdg"
+                      },
+                      "eventPoster": {
+                        "type": "string",
+                        "example": "url://123/img.jpg"
+                      },
+                      "eventDate": {
+                        "type": "string",
+                        "example": "10/10/2023"
+                      },
+                      "eventTime": {
+                        "type": "string",
+                        "example": "10:00"
+                      },
+                      "eventVenue": {
+                        "type": "string",
+                        "example": "MG Audi"
+                      },
+                      "eventOrganiser": {
+                        "type": "string",
+                        "example": "Android Club"
+                      },
+                      "participantCount": {
+                        "type": "number",
+                        "example": 12
+                      },
+                      "hostedBy": {
+                        "type": "string",
+                        "example": "Android Club"
+                      },
+                      "isApproved": {
+                        "type": "boolean",
+                        "example": true
+                      },
+                      "isRejected": {
+                        "type": "boolean",
+                        "example": false
+                      }
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/warden/auth/login": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "block": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "Warden A"
+                    },
+                    "block": {
+                      "type": "string",
+                      "example": "A"
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            },
+            "token": ""
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v1/warden/me/": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "Warden A"
+                    },
+                    "block": {
+                      "type": "string",
+                      "example": "A"
+                    },
+                    "complaint": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number",
+                            "example": 1
+                          },
+                          "complaintType": {
+                            "type": "string",
+                            "example": "Hostel"
+                          },
+                          "complaintDate": {
+                            "type": "string",
+                            "example": "20-06-2023"
+                          },
+                          "complaintDescription": {
+                            "type": "string",
+                            "example": "Tap Leak"
+                          },
+                          "complaintSeverity": {
+                            "type": "string",
+                            "example": "High"
+                          },
+                          "isResolved": {
+                            "type": "boolean",
+                            "example": true
+                          },
+                          "studentId": {
+                            "type": "number",
+                            "example": 1
+                          },
+                          "wardenId": {
+                            "type": "number",
+                            "example": 1
+                          }
+                        }
+                      }
+                    },
+                    "leave": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number",
+                            "example": 1
+                          },
+                          "leaveType": {
+                            "type": "string",
+                            "example": "Visit Temple"
+                          },
+                          "leaveDate": {
+                            "type": "string",
+                            "example": "21-06-2023"
+                          },
+                          "leaveTime": {
+                            "type": "string",
+                            "example": "12:00"
+                          },
+                          "LeaveDuration": {
+                            "type": "string",
+                            "example": "3d"
+                          },
+                          "isApproved": {
+                            "type": "boolean",
+                            "example": true
+                          },
+                          "isRejected": {
+                            "type": "boolean",
+                            "example": false
+                          },
+                          "studentId": {
+                            "type": "number",
+                            "example": 1
+                          },
+                          "wardenId": {
+                            "type": "number",
+                            "example": 1
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/warden/leave/": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "leaveType": {
+                      "type": "string",
+                      "example": "Visit Temple"
+                    },
+                    "leaveDate": {
+                      "type": "string",
+                      "example": "21-06-2023"
+                    },
+                    "leaveTime": {
+                      "type": "string",
+                      "example": "12:00"
+                    },
+                    "LeaveDuration": {
+                      "type": "string",
+                      "example": "3d"
+                    },
+                    "isApproved": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "isRejected": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "studentId": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "wardenId": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "Student": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number",
+                          "example": 1
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "John Doe"
+                        },
+                        "regNo": {
+                          "type": "string",
+                          "example": "19BCE1000"
+                        },
+                        "roomNo": {
+                          "type": "string",
+                          "example": "A-102"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/warden/leave/accept/{id}": {
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "leaveType": {
+                      "type": "string",
+                      "example": "Visit Temple"
+                    },
+                    "leaveDate": {
+                      "type": "string",
+                      "example": "21-06-2023"
+                    },
+                    "leaveTime": {
+                      "type": "string",
+                      "example": "12:00"
+                    },
+                    "LeaveDuration": {
+                      "type": "string",
+                      "example": "3d"
+                    },
+                    "isApproved": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "isRejected": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "studentId": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "wardenId": {
+                      "type": "number",
+                      "example": 1
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/warden/leave/reject/{id}": {
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 2
+                    },
+                    "leaveType": {
+                      "type": "string",
+                      "example": "Visit Temple"
+                    },
+                    "leaveDate": {
+                      "type": "string",
+                      "example": "21-06-2023"
+                    },
+                    "leaveTime": {
+                      "type": "string",
+                      "example": "12:00"
+                    },
+                    "LeaveDuration": {
+                      "type": "string",
+                      "example": "3d"
+                    },
+                    "isApproved": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "isRejected": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "studentId": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "wardenId": {
+                      "type": "number",
+                      "example": 1
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/warden/complaint/": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "complaint": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number",
+                            "example": 1
+                          },
+                          "complaintType": {
+                            "type": "string",
+                            "example": "Electrical"
+                          },
+                          "complaintDate": {
+                            "type": "string",
+                            "example": "2021-05-05"
+                          },
+                          "complaintDescription": {
+                            "type": "string",
+                            "example": "Lights not working"
+                          },
+                          "complaintSeverity": {
+                            "type": "string",
+                            "example": "High"
+                          },
+                          "isResolved": {
+                            "type": "boolean",
+                            "example": false
+                          },
+                          "studentId": {
+                            "type": "number",
+                            "example": 1
+                          },
+                          "wardenId": {
+                            "type": "number",
+                            "example": 1
+                          },
+                          "Student": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number",
+                                "example": 1
+                              },
+                              "name": {
+                                "type": "string",
+                                "example": "John Wick"
+                              },
+                              "regNo": {
+                                "type": "string",
+                                "example": "21BPS1390"
+                              },
+                              "roomNo": {
+                                "type": "string",
+                                "example": "A-102"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/warden/complaint/accept/{id}": {
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "complaintType": {
+                      "type": "string",
+                      "example": "Hostel"
+                    },
+                    "complaintDate": {
+                      "type": "string",
+                      "example": "20-06-2023"
+                    },
+                    "complaintDescription": {
+                      "type": "string",
+                      "example": "Tap Leak"
+                    },
+                    "complaintSeverity": {
+                      "type": "string",
+                      "example": "High"
+                    },
+                    "isResolved": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "studentId": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "wardenId": {
+                      "type": "number",
+                      "example": 1
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/warden/complaint/reject/{id}": {
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "complaintType": {
+                      "type": "string",
+                      "example": "Hostel"
+                    },
+                    "complaintDate": {
+                      "type": "string",
+                      "example": "20-06-2023"
+                    },
+                    "complaintDescription": {
+                      "type": "string",
+                      "example": "Tap Leak"
+                    },
+                    "complaintSeverity": {
+                      "type": "string",
+                      "example": "High"
+                    },
+                    "isResolved": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "studentId": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "wardenId": {
+                      "type": "number",
+                      "example": 1
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/warden/room-details/": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 4
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "John Dow"
+                    },
+                    "regNo": {
+                      "type": "string",
+                      "example": "21BCE1000"
+                    },
+                    "block": {
+                      "type": "string",
+                      "example": "A"
+                    },
+                    "roomNo": {
+                      "type": "string",
+                      "example": "A-105"
+                    },
+                    "messType": {
+                      "type": "string",
+                      "example": "Non Veg"
+                    },
+                    "toBeChangedTo": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "isForChange": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "roomId": {
+                      "type": "number",
+                      "example": 4
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/warden/room-details/create": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "roomNo": {
+                  "example": "any"
+                },
+                "roomCapacity": {
+                  "example": "any"
+                },
+                "roomType": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 4
+                    },
+                    "roomNo": {
+                      "type": "string",
+                      "example": "A-105"
+                    },
+                    "roomType": {
+                      "type": "string",
+                      "example": "AC"
+                    },
+                    "roomCapacity": {
+                      "type": "number",
+                      "example": 2
+                    },
+                    "block": {
+                      "type": "string",
+                      "example": "A"
+                    },
+                    "isFull": {
+                      "type": "boolean",
+                      "example": false
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/warden/room-details/getAllNotAssignedStudents": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 2
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "John Doe"
+                    },
+                    "regNo": {
+                      "type": "string",
+                      "example": "21BCE1000"
+                    },
+                    "block": {
+                      "type": "string",
+                      "example": "A"
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/warden/room-details/getAllNotAssignedRooms": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number",
+                        "example": 3
+                      },
+                      "roomNo": {
+                        "type": "string",
+                        "example": "A-102"
+                      },
+                      "roomType": {
+                        "type": "string",
+                        "example": "AC"
+                      },
+                      "roomCapacity": {
+                        "type": "number",
+                        "example": 2
+                      },
+                      "block": {
+                        "type": "string",
+                        "example": "A"
+                      },
+                      "isFull": {
+                        "type": "boolean",
+                        "example": false
+                      },
+                      "students": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "number",
+                              "example": 1
+                            },
+                            "name": {
+                              "type": "string",
+                              "example": "John Doe"
+                            },
+                            "regNo": {
+                              "type": "string",
+                              "example": "21BCE1000"
+                            },
+                            "block": {
+                              "type": "string",
+                              "example": "A"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/warden/room-details/assignRoom": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "studentId": {
+                  "example": "any"
+                },
+                "roomId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 4
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "John Wick"
+                    },
+                    "regNo": {
+                      "type": "string",
+                      "example": "21BPS1769"
+                    },
+                    "block": {
+                      "type": "string",
+                      "example": "A"
+                    },
+                    "roomNo": {
+                      "type": "string",
+                      "example": "A-105"
+                    },
+                    "messType": {
+                      "type": "string",
+                      "example": "Veg"
+                    },
+                    "toBeChangedTo": {
+                      "type": "string",
+                      "example": "Non Veg"
+                    },
+                    "isForChange": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "roomId": {
+                      "type": "number",
+                      "example": 4
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/warden/room-details/removeStudent": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "studentId": {
+                  "example": "any"
+                },
+                "roomId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 4
+                    },
+                    "roomNo": {
+                      "type": "string",
+                      "example": "A-105"
+                    },
+                    "roomType": {
+                      "type": "string",
+                      "example": "AC"
+                    },
+                    "roomCapacity": {
+                      "type": "number",
+                      "example": 2
+                    },
+                    "block": {
+                      "type": "string",
+                      "example": "A"
+                    },
+                    "isFull": {
+                      "type": "boolean",
+                      "example": false
+                    }
+                  }
+                },
+                "message": {
+                  "type": "string",
+                  "example": "Removed from room successfully"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/warden/mess-details/": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "success"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number",
+                        "example": 2
+                      },
+                      "name": {
+                        "type": "string",
+                        "example": "John Wick"
+                      },
+                      "regNo": {
+                        "type": "string",
+                        "example": "21BPS1388"
+                      },
+                      "block": {
+                        "type": "string",
+                        "example": "A"
+                      },
+                      "messType": {
+                        "type": "string",
+                        "example": "Veg"
+                      },
+                      "isForChange": {
+                        "type": "boolean",
+                        "example": false
+                      },
+                      "toBeChangedTo": {
+                        "type": "string",
+                        "example": ""
+                      },
+                      "Room": {}
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/warden/mess-details/accept/{id}": {
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 4
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "John Dow"
+                    },
+                    "regNo": {
+                      "type": "string",
+                      "example": "21BCE1000"
+                    },
+                    "block": {
+                      "type": "string",
+                      "example": "A"
+                    },
+                    "roomNo": {
+                      "type": "string",
+                      "example": "A-105"
+                    },
+                    "messType": {
+                      "type": "string",
+                      "example": "Non Veg"
+                    },
+                    "toBeChangedTo": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "isForChange": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "roomId": {
+                      "type": "number",
+                      "example": 4
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/warden/mess-details/reject/{id}": {
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 4
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "John Dow"
+                    },
+                    "regNo": {
+                      "type": "string",
+                      "example": "21BCE1000"
+                    },
+                    "block": {
+                      "type": "string",
+                      "example": "A"
+                    },
+                    "roomNo": {
+                      "type": "string",
+                      "example": "A-105"
+                    },
+                    "messType": {
+                      "type": "string",
+                      "example": "Veg"
+                    },
+                    "toBeChangedTo": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "isForChange": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "roomId": {
+                      "type": "number",
+                      "example": 4
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/warden/student/": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "John Dow"
+                    },
+                    "regNo": {
+                      "type": "string",
+                      "example": "21BCE1000"
+                    },
+                    "block": {
+                      "type": "string",
+                      "example": "A"
+                    },
+                    "roomNo": {
+                      "type": "string",
+                      "example": "A-102"
+                    },
+                    "messType": {
+                      "type": "string",
+                      "example": "Special"
+                    },
+                    "toBeChangedTo": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "isForChange": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "roomId": {
+                      "type": "number",
+                      "example": 3
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/warden/student/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User successfully obtained.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 2
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "John Wick"
+                    },
+                    "regNo": {
+                      "type": "string",
+                      "example": "21BPS1388"
+                    },
+                    "block": {
+                      "type": "string",
+                      "example": "A"
+                    },
+                    "roomNo": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "messType": {
+                      "type": "string",
+                      "example": "Veg"
+                    },
+                    "toBeChangedTo": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "isForChange": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "roomId": {}
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/faculty/auth/register": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "empId": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                },
+                "isHOD": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Faculty successfully registered.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Faculty created successfully"
+                },
+                "faculty": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 5
+                    },
+                    "empId": {
+                      "type": "string",
+                      "example": "12347"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "Faculty-5"
+                    },
+                    "isHOD": {
+                      "type": "boolean",
+                      "example": false
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/faculty/auth/login": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "empId": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Faculty successfully registered.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Logged in successfully"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 5
+                    },
+                    "empId": {
+                      "type": "string",
+                      "example": "12347"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "Faculty-5"
+                    },
+                    "isHOD": {
+                      "type": "boolean",
+                      "example": false
+                    }
+                  }
+                },
+                "token": {
+                  "type": "string",
+                  "example": ""
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v1/faculty/event/get-all-unapproved": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Faculty successfully registered.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number",
+                        "example": 3
+                      },
+                      "eventName": {
+                        "type": "string",
+                        "example": "WebVerse2.0"
+                      },
+                      "eventDescription": {
+                        "type": "string",
+                        "example": "fiuhgudasisnlgfdg"
+                      },
+                      "eventPoster": {
+                        "type": "string",
+                        "example": "url://123/img.jpg"
+                      },
+                      "eventDate": {
+                        "type": "string",
+                        "example": "10/10/2023"
+                      },
+                      "eventTime": {
+                        "type": "string",
+                        "example": "10:00"
+                      },
+                      "eventVenue": {
+                        "type": "string",
+                        "example": "MG Audi"
+                      },
+                      "eventOrganiser": {
+                        "type": "string",
+                        "example": "Android Club"
+                      },
+                      "participantCount": {
+                        "type": "number",
+                        "example": 12
+                      },
+                      "hostedBy": {
+                        "type": "string",
+                        "example": "Android Club"
+                      },
+                      "isApproved": {
+                        "type": "boolean",
+                        "example": false
+                      },
+                      "isRejected": {
+                        "type": "boolean",
+                        "example": false
+                      }
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/faculty/event/get-all-approved": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Faculty successfully registered.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number",
+                        "example": 1
+                      },
+                      "eventName": {
+                        "type": "string",
+                        "example": "WebVerse"
+                      },
+                      "eventDescription": {
+                        "type": "string",
+                        "example": "fiuhguisnlgfdg"
+                      },
+                      "eventPoster": {
+                        "type": "string",
+                        "example": "url://123/img.jpg"
+                      },
+                      "eventDate": {
+                        "type": "string",
+                        "example": "10/10/2023"
+                      },
+                      "eventTime": {
+                        "type": "string",
+                        "example": "10:00"
+                      },
+                      "eventVenue": {
+                        "type": "string",
+                        "example": "MG Audi"
+                      },
+                      "eventOrganiser": {
+                        "type": "string",
+                        "example": "Android Club"
+                      },
+                      "participantCount": {
+                        "type": "number",
+                        "example": 12
+                      },
+                      "hostedBy": {
+                        "type": "string",
+                        "example": "Android Club"
+                      },
+                      "isApproved": {
+                        "type": "boolean",
+                        "example": true
+                      },
+                      "isRejected": {
+                        "type": "boolean",
+                        "example": false
+                      }
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/faculty/event/approve-event": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "eventId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Faculty successfully registered.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 4
+                    },
+                    "eventName": {
+                      "type": "string",
+                      "example": "WebVerse3.0"
+                    },
+                    "eventDescription": {
+                      "type": "string",
+                      "example": "fiuhgudasisnlgfdg"
+                    },
+                    "eventPoster": {
+                      "type": "string",
+                      "example": "url://123/img.jpg"
+                    },
+                    "eventDate": {
+                      "type": "string",
+                      "example": "10/10/2023"
+                    },
+                    "eventTime": {
+                      "type": "string",
+                      "example": "10:00"
+                    },
+                    "eventVenue": {
+                      "type": "string",
+                      "example": "MG Audi"
+                    },
+                    "eventOrganiser": {
+                      "type": "string",
+                      "example": "Android Club"
+                    },
+                    "participantCount": {
+                      "type": "number",
+                      "example": 12
+                    },
+                    "hostedBy": {
+                      "type": "string",
+                      "example": "Android Club"
+                    },
+                    "isApproved": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "isRejected": {
+                      "type": "boolean",
+                      "example": false
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/faculty/event/reject-event": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "eventId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Faculty successfully registered.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number",
+                      "example": 4
+                    },
+                    "eventName": {
+                      "type": "string",
+                      "example": "WebVerse3.0"
+                    },
+                    "eventDescription": {
+                      "type": "string",
+                      "example": "fiuhgudasisnlgfdg"
+                    },
+                    "eventPoster": {
+                      "type": "string",
+                      "example": "url://123/img.jpg"
+                    },
+                    "eventDate": {
+                      "type": "string",
+                      "example": "10/10/2023"
+                    },
+                    "eventTime": {
+                      "type": "string",
+                      "example": "10:00"
+                    },
+                    "eventVenue": {
+                      "type": "string",
+                      "example": "MG Audi"
+                    },
+                    "eventOrganiser": {
+                      "type": "string",
+                      "example": "Android Club"
+                    },
+                    "participantCount": {
+                      "type": "number",
+                      "example": 12
+                    },
+                    "hostedBy": {
+                      "type": "string",
+                      "example": "Android Club"
+                    },
+                    "isApproved": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "isRejected": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/faculty/course/get-all-courses": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Faculty successfully registered.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number",
+                        "example": 2
+                      },
+                      "courseName": {
+                        "type": "string",
+                        "example": "DAA"
+                      },
+                      "courseCode": {
+                        "type": "string",
+                        "example": "BCSE204L"
+                      },
+                      "courseType": {
+                        "type": "string",
+                        "example": "Theory"
+                      },
+                      "courseCredits": {
+                        "type": "number",
+                        "example": 4
+                      },
+                      "courseTeacherId": {
+                        "type": "number",
+                        "example": 4
+                      }
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/faculty/course/get-all-students-from-course": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Faculty successfully registered.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number",
+                        "example": 1
+                      },
+                      "name": {
+                        "type": "string",
+                        "example": "John Wick"
+                      },
+                      "regNo": {
+                        "type": "string",
+                        "example": "21BPS1390"
+                      },
+                      "block": {
+                        "type": "string",
+                        "example": "A"
+                      },
+                      "password": {
+                        "type": "string",
+                        "example": "$2b$10$hifMoCiUGNhY8Imz3chcIebaa5SuRBQPI/VgFOjYnBzy01ejwW4Hy"
+                      },
+                      "roomNo": {
+                        "type": "string",
+                        "example": "A-102"
+                      },
+                      "messType": {
+                        "type": "string",
+                        "example": "Special"
+                      },
+                      "toBeChangedTo": {
+                        "type": "string",
+                        "example": ""
+                      },
+                      "isForChange": {
+                        "type": "boolean",
+                        "example": false
+                      },
+                      "roomId": {
+                        "type": "number",
+                        "example": 3
+                      }
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}

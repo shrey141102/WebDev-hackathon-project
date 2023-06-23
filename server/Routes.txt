@@ -1,0 +1,5 @@
+
+/router/Student/studentAuthRouter.js: [student/auth/login/ (POST), student/auth/register/ (POST)]
+/router/Warden/wardenAuthRouter.js: [warden/auth/login/ (POST)]
+
+/router/Student/studentLeaveRouter.js: [student/leave/ (GET), student/leave/ (POST)]
