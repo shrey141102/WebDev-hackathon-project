@@ -42,7 +42,8 @@
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<img width="1440" alt="Screenshot 2023-06-24 at 1 43 45 AM" src="https://github.com/shrey141102/WebDev-hackathon-project/assets/90243443/a4c97acb-59e8-466b-a239-7a9afdefc3aa">
+
 
 
 ## Tech Stack
