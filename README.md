@@ -49,6 +49,8 @@
 
 <img width="1440" alt="image" src="https://github.com/shrey141102/WebDev-hackathon-project/assets/90243443/7d93d7d2-da71-4163-9523-c27dcfeb8a3b">
 
+<img width="1440" alt="image" src="https://github.com/shrey141102/WebDev-hackathon-project/assets/90243443/ff74b0c7-b37e-4fe1-aeca-4fae04a02cf5">
+
 
 ## Tech Stack
 
