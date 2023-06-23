@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Cutive', serif;
+}
+.student-details{
+    background-color: rgba(40, 74, 111, 255);;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Full-name{
+    padding: 0 1rem;
+    font-weight: 800;
+    font-size: 2rem;
+    color: whitesmoke;
+}
+.reg-no{
+    font-weight: 600;
+    font-size: 1rem;
+    color: white ;
+}
+.student{
+    padding: 0 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: grey;
+}
+.list-details{
+    display: flex;
+}
+.item{
+    padding: 0 20px;
+    font-size: 1.5rem;
+    color: bisque;
+}
+body{
+background: linear-gradient(90deg, rgb(37, 150, 190) 0%, rgb(128, 178, 228) 35%, rgba(226, 194, 129, 1) 100%, rgba(255, 104, 0, 1) 100%); 
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.upper-functions{
+    padding: 10rem 2.5rem 0 4rem;
+    background: linear-gradient(90deg, rgb(37, 150, 190) 0%, rgb(128, 178, 228) 35%, rgba(226, 194, 129, 1) 100%, rgba(255, 104, 0, 1) 100%);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.see{
+    border-radius: 1rem;
+    background-color: rgb(255, 255, 255);
+    margin: 1rem;
+    display:inline-block;
+    height: 18rem;
+    width: 25rem;
+    box-shadow: 5px 10px 8px #888888;
+}
+.events{
+    background-color: rgb(255, 255, 255);
+
+    margin: 1rem;
+    display:inline-block;
+    height: 18rem;
+    width: 25rem;
+    box-shadow: 5px 10px 8px #9f9b9b;
+
+}
+.view-events{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    margin: 1rem;
+    display:inline-block;
+    height: 18rem;
+    width: 25rem;
+    box-shadow: 5px 10px 8px #888888;
+
+}
