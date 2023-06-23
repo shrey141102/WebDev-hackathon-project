@@ -69,4 +69,4 @@
 
  - [Free icons - lordicon](https://lordicon.com/icons/system/outline?group=free)
  - [Background - particles.js](https://marcbruederlin.github.io/particles.js/)
-- [Logo, icons- logoai](https://marcbruederlin.github.io/particles.js/) 
+- [Logo- logoai](https://marcbruederlin.github.io/particles.js/) 
