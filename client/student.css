@@ -5,7 +5,7 @@
     font-family: 'Cutive', serif;
 }
 .student-details{
-    background-color: blanchedalmond;
+    background-color: rgba(40, 74, 111, 255);;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -14,15 +14,18 @@
     padding: 0 1rem;
     font-weight: 800;
     font-size: 2rem;
+    color: whitesmoke;
 }
 .reg-no{
     font-weight: 600;
     font-size: 1rem;
+    color: white ;
 }
 .student{
     padding: 0 1.5rem;
     font-size: 1.5rem;
     font-weight: 500;
+    color: grey;
 }
 .list-details{
     display: flex;
@@ -30,17 +33,18 @@
 .item{
     padding: 0 20px;
     font-size: 1.5rem;
+    color: bisque;
 }
 
 .upper-functions{
     padding: 0 0 0 6.5rem;
-    background-color: aquamarine;
+    background: linear-gradient(90deg, rgb(37, 150, 190) 0%, rgb(128, 178, 228) 35%, rgba(226, 194, 129, 1) 100%, rgba(255, 104, 0, 1) 100%);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
 .leave-request{
-    background-color: rgb(27, 103, 203);
+    background-color: rgb(255, 255, 255);
     margin: 1rem;
     display:inline-block;
     height: 18rem;
@@ -49,25 +53,25 @@
 }
 
 .complaint{
-    background-color: rgb(27, 103, 203);
+    background-color: rgb(255, 255, 255);
 
     margin: 1rem;
     display:inline-block;
     height: 18rem;
     width: 25rem;
-    box-shadow: 5px 10px 8px #888888;
+    box-shadow: 5px 10px 8px #9f9b9b;
 
 }
 
 .bottom-functions{
     padding: 0 0 0 6.5rem;
-    background-color: aquamarine;
+    background: linear-gradient(90deg, rgb(37, 150, 190) 0%, rgb(128, 178, 228) 35%, rgba(226, 194, 129, 1) 100%, rgba(255, 104, 0, 1) 100%);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
 .mess-change{
-    background-color: rgb(27, 103, 203);
+    background-color: rgb(255, 255, 255);
     margin: 1rem;
     display:inline-block;
     height: 18rem;
@@ -76,7 +80,7 @@
 
 }
 .room-details{
-    background-color: rgb(27, 103, 203);
+    background-color: rgb(255, 255, 255);
     margin: 1rem;
     display:inline-block;
     height: 18rem;
@@ -85,7 +89,7 @@
 
 }
 .reg-course{
-    background-color: rgb(27, 103, 203);
+    background-color: rgb(255, 255, 255);
 
     margin: 1rem;
     display:inline-block;
@@ -98,7 +102,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(27, 103, 203);
+    background-color: rgb(255, 255, 255);
     margin: 1rem;
     display:inline-block;
     height: 18rem;
