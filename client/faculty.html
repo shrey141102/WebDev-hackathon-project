@@ -28,10 +28,12 @@
         </div>
         <div class="student-image">
             <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
-            <a href=""><lord-icon class="icon" src="https://cdn.lordicon.com/dqxvvqzi.json" trigger="loop-on-hover"
-                    delay="20" colors="outline:#121331,primary:#ffc738,secondary:#16a9c7" state="hover-looking-around"
-                    style="width: 7rem; height: 7rem;">
-                </lord-icon></a>
+<lord-icon
+    src="https://cdn.lordicon.com/itmsnfur.json"
+    trigger="hover"
+    colors="outline:#000000,primary:#000000,secondary:#3e5c0a,tertiary:#f9c9c0"
+    style="width:150px;height:150px">
+</lord-icon>
         </div>
     </div>
     <div class="functions" id = "functions">
@@ -40,6 +42,7 @@
                 <h1>Courses & Students</h1>
                 <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
                 <lord-icon
+                        onclick="sv('functions', 'none');sv('cour','flex')"
                         src="https://cdn.lordicon.com/qhgmphtg.json"
                         trigger="hover"
                         colors="primary:#104891,secondary:#f4c89c"
@@ -68,6 +71,15 @@
         <input type = "text" placeholder="Choose which to approve">
         <br>
         <input type = "button" value = "Ok" onclick="sv('eve','none');sv('functions', 'inline')">
+    </div>
+    <div class = "cour" id = "cour">
+        <h3>Ayush Shah - B.Tech CSE Core</h3>
+        <h3>Shrey - B.Tech CSE AI & Robotics</h3>
+        <h3>Bhavya - M.Tech CSE Core</h3>
+        <br>
+        <input type = "text" placeholder="Choose which to approve">
+        <br>
+        <input type = "button" value = "Ok" onclick="sv('cour','none');sv('functions', 'inline')">
     </div>
     <canvas class = "background"></canvas>
     <script src = "loginjs.js"></script>

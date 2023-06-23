@@ -106,3 +106,22 @@ background: linear-gradient(90deg, rgb(37, 150, 190) 0%, rgb(128, 178, 228) 35%,
     box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
 }
+.cour{
+    width: 25rem;
+    height: 16.5rem;
+    background-color: rgb(243, 251, 248);
+    border-radius: 10px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    position: relative;
+    left:33rem;
+    top:10rem;
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
