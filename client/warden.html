@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warden</title>
+    <link rel="stylesheet" href="warden.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cutive&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div class="student-details">
+        <div class="name">
+            <p class="Full-name">
+                Mahesh Kumar <sub class="reg-no">(52569)</sub>
+            </p>
+            <p class="student">&ltWarden&gt</p>
+        </div>
+        <div class="details">
+            <ul class="list-details">
+                <li class="item">School : SCOPE</li>
+                <li class="item">Cabin Number : 203</li>
+            </ul>
+        </div>
+        <div class="student-image">
+            <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+<lord-icon
+    src="https://cdn.lordicon.com/itmsnfur.json"
+    trigger="hover"
+    colors="outline:#000000,primary:#000000,secondary:#3e5c0a,tertiary:#f9c9c0"
+    style="width:150px;height:150px">
+</lord-icon>
+        </div>
+    </div>
+    <div class="functions" id = "functions">
+        <div class="upper-functions">
+            <div class="leav" id = "leav">
+                <h1>Leave</h1>
+                <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                <lord-icon
+                        onclick="sv('functions', 'none');sv('leave','flex')"
+                        src="https://cdn.lordicon.com/gmzxduhd.json"
+                        trigger="morph"
+                        colors="primary:#121331,secondary:#1663c7"
+                        state="morph-roll-to-back"
+                        style="width:250px;height:250px"> 
+                    </lord-icon>
+            </div>
+            <div class="leav" id = "leav">
+                <h1>Complaint</h1>
+                <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                <lord-icon
+                        onclick="sv('functions', 'none');sv('compl','flex')"
+                        src="https://cdn.lordicon.com/msoeawqm.json"
+                        trigger="hover"
+                        colors="primary:#121331,secondary:#1663c7"
+                        style="width:250px;height:250px">                    
+                    </lord-icon>
+            </div>
+            <div class="leav" id = "leav">
+                <h1>Mess</h1>
+                <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                <lord-icon
+                        onclick="sv('functions', 'none');sv('mcr','flex')"
+                        src="https://cdn.lordicon.com/slkvcfos.json"
+                        trigger="hover"
+                        colors="primary:#121331,secondary:#1663c7"
+                        style="width:250px;height:250px">
+                    </lord-icon>
+            </div>
+            <div class="leav" id = "leav">
+                <h1>Room</h1>
+                <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                <lord-icon
+                        onclick="sv('functions', 'none');sv('rcr','flex')"
+                        src="https://cdn.lordicon.com/zzcjjxew.json"
+                        trigger="hover"
+                        colors="primary:#121331,secondary:#3080e8"
+                        state="hover-spin"
+                        style="width:250px;height:250px">                    
+                    </lord-icon>
+                </div>
+            </div>
+        </div>
+        <div class = "leave" id = "leave">
+            <h2>Name : Ayush</h2>
+            <h2>28-06-2023</h2>
+            <h2>Outing</h2>
+            <h2>10:00 am to 6:00 pm</h2>
+            <h2>8 hours</h2>
+            <br>
+            <h2>Approve or Cancel?</h2>
+            <br>
+            <input type="radio" id = "yes">
+            <label for = "yes">Yes</label>
+            <input type="radio" id = "no">
+            <label for = "no">No</label>
+            <br>
+            <input type = "button" value = "Submit" onclick="sv('leave','none');sv('functions', 'inline')">
+        </div>
+        <div class = "compl" id = "compl">
+            <h2>23-06-2023</h2>
+            <h2>Leakage</h2>
+            <h2>Tap in</h2>
+            <h2>Bathroom is Leaking</h2>
+            <h2>Urgent</h2>
+            <br>
+            <h2>Approve or Cancel?</h2>
+            <br>
+            <input type="radio" id = "yes">
+            <label for = "yes">Yes</label>
+            <input type="radio" id = "no">
+            <label for = "no">No</label>
+            <br>
+            <input type = "button" value = "Submit" onclick="sv('compl','none');sv('functions', 'inline')">
+        </div>
+        <div class = "mcr" id = "mcr">
+            <h2>Name : Ayush</h2>
+            <h2>Veg Mess</h2>
+            <h2>To</h2>
+            <h2>Non Veg Mess</h2>
+            <br>
+            <h2>Approve or Cancel?</h2>
+            <br>
+            <input type="radio" id = "yes">
+            <label for = "yes">Yes</label>
+            <input type="radio" id = "no">
+            <label for = "no">No</label>
+            <br>
+            <input type = "button" value = "Submit" onclick="sv('mcr','none');sv('functions', 'inline')">
+        </div>
+        <div class = "rcr" id = "rcr">
+            <h2>Name : Ayush</h2>
+            <h2>Room 562</h2>
+            <h2>To</h2>
+            <h2>Room 420</h2>
+            <br>
+            <h2>Approve or Cancel?</h2>
+            <br>
+            <input type="radio" id = "yes">
+            <label for = "yes">Yes</label>
+            <input type="radio" id = "no">
+            <label for = "no">No</label>
+            <br>
+            <input type = "button" value = "Submit" onclick="sv('rcr','none');sv('functions', 'inline')">
+        </div>
+    <canvas class = "background"></canvas>
+    <script src = "loginjs.js"></script>
+    <script src="./particles.js"></script>
+</body>
+</html>
