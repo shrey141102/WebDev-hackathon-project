@@ -83,6 +83,7 @@
             <div class = "in" id = "in">
                 <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
                 <lord-icon
+                    onclick="sv('studentr','flex');sv('option','none')"
                     src="https://cdn.lordicon.com/wloilxuq.json"
                     trigger="hover"
                     colors="primary:#104891,secondary:#f4c89c"
@@ -90,13 +91,18 @@
                 </lord-icon>
                 <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
                 <lord-icon
-                    src="https://cdn.lordicon.com/rqqkvjqf.json"
-                    trigger="hover"
-                    colors="primary:#000000,secondary:#1b1091"
-                    style="width:150px;height:150px">
-                </lord-icon>
-            </div>
-
+                onclick="sv('studentl','flex');sv('option','none')"
+                src="https://cdn.lordicon.com/rqqkvjqf.json"
+                trigger="hover"
+                colors="primary:#000000,secondary:#1b1091"
+                style="width:150px;height:150px">
+            </lord-icon>
+        </div>
+        <div class = "reg">
+            <h3>Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+            <br>
+            <h3>Login</h3>
+        </div>
         </div>
     </div>
     <div class = "logins" id = "logins">
@@ -128,7 +134,31 @@
             <input type ="button" value="Submit" onclick="sv('wardenl','none')">
         </div>
     </div>
+<<<<<<< Updated upstream
     <canvas class="background"></canvas>
+=======
+    <div class = "regs" id="regs">
+        <div class = "studentr" id = "studentr">
+            <h1 class = "s">Student Login</h1>
+            <form class = "regdata" id = "regdata">
+                <input type = "text" placeholder = "Name">
+                <br>
+                <input type = "text" placeholder = "Reg No">
+                <br>
+                <input type = "text" placeholder = "Room Details">
+                <br>
+                <input type = "text" placeholder = "Hostel Block">
+                <br>
+                <input type = "password" placeholder = "Pass Word">
+                <br>
+                <input type = "text" placeholder = "Mess Type">
+                <br>
+            </form>
+            <br>
+            <input type="button" value = "Submit" onclick = "sv('studentr','none')">
+        </div>
+    </div>
+>>>>>>> Stashed changes
     <script src = "loginjs.js"></script>
     <script src="./particles.js"></script>
 </body>
